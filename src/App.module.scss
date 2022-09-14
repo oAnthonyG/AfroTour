@@ -90,41 +90,6 @@
 
     list-style: none;
 
-    li {
-      background-color: $white;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 8px;
-      overflow: hidden;
 
-      img {
-        width: 35rem;
-        max-height: 10rem;
-        object-fit: cover;
-      }
-
-      >div{
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1.5rem 1rem;
-        h3{
-          font-family: 'Poppins', sans-serif;
-          font-size: 1.125rem;
-          text-transform: uppercase;
-        }
-        p{
-          color: $gray-700;
-        }
-        .pricing{
-          font-size: 0.875rem;
-
-          span{
-            font-weight: 600;
-            color: $green-600;
-          }
-        }
-        
-      }
-    }
   }
 }
