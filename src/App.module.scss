@@ -1,0 +1,64 @@
+@import './styles/colors';
+
+
+.welcome {
+  background-color: $gray-300;
+  
+  .welcomeContent {
+    display: flex;
+    align-items: flex-end;
+    gap: 14.75rem;
+    width: 71rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+
+    >div {
+      margin: 5rem 0;
+      span {
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $green-700;
+      }
+
+      h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.25rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        color: $gray-600;
+      }
+
+      button {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: none;
+        border-radius: 20rem;
+        padding: 1rem;
+        color: $white;
+        background-color: $green-500;
+
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: $green-600;
+        }
+      }
+    }
+
+    img{
+      height: 29.5rem;
+
+      @media screen and (max-width: 1080px){
+        display: none;
+      }
+    }
+  }
+}
