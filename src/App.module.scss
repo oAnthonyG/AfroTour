@@ -35,9 +35,12 @@
       }
 
       button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 0.875rem;
-        text-transform: uppercase;
         font-weight: 700;
+        text-transform: uppercase;
         border: none;
         border-radius: 20rem;
         padding: 1rem;
@@ -49,6 +52,10 @@
 
         &:hover {
           background-color: $green-600;
+        }
+
+        img{
+          height: 1.125rem;
         }
       }
     }
