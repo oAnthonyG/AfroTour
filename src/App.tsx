@@ -6,6 +6,7 @@ import HappyPersonPng from './assets/happy-person.png';
 
 import WhatsAppSvg from './assets/icon-wpp.svg';
 import { RegionCard } from './components/RegionCard';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           </ul>
         </section>
       </main>
+        <Footer />
     </>
   )
 }
