@@ -1,7 +1,47 @@
 import { CityCard } from '../components/CityCard';
+import { CityList } from '../components/CityList';
 import { Title } from '../components/Title';
 import styles from './Region.module.scss';
 
+const cities = [
+  {
+    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    cityName: 'Vitória',
+    habitants: 362097,
+    area: 276.8,
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    cityName: 'Vitória',
+    habitants: 362097,
+    area: 276.8,
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    cityName: 'Vitória',
+    habitants: 362097,
+    area: 276.8,
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    cityName: 'Vitória',
+    habitants: 362097,
+    area: 276.8,
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    cityName: 'Vitória',
+    habitants: 362097,
+    area: 276.8,
+  },
+  {
+    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+    cityName: 'Vitória',
+    habitants: 362097,
+    area: 276.8,
+  },
+
+]
 
 export function Region() {
   return (
@@ -37,43 +77,10 @@ export function Region() {
         </article>
         <Title>Escolha uma cidade</Title>
 
-        <section className={styles.cityList}>
-          <h3>Espirito Santo</h3>
-          <ul>
-            <CityCard 
-            cityName='Vitória'
-            habitants={362097}
-            area={276.8}
-            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            />
-            <CityCard 
-            cityName='Vitória'
-            habitants={362097}
-            area={276.8}
-            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            />
-            <CityCard 
-            cityName='Vitória'
-            habitants={362097}
-            area={276.8}
-            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            />
-            <CityCard 
-            cityName='Vitória'
-            habitants={362097}
-            area={276.8}
-            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            />
-            <CityCard 
-            cityName='Vitória'
-            habitants={362097}
-            area={276.8}
-            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            />
-            
-            
-          </ul>
-        </section>
+          <CityList stateName='Espirito Santo' cities={cities}/>
+          <CityList stateName='Minas Gerais' cities={cities}/>
+          <CityList stateName='Rio de Janeiro' cities={cities}/>
+          <CityList stateName='São Paulo' cities={cities}/>
 
       </section>
     </main >

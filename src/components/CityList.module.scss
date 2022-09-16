@@ -1,0 +1,26 @@
+@import '../styles/colors';
+
+.cityList {
+  margin-top: 3rem;
+
+  &+& {
+    margin-top: 2rem;
+  }
+
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+
+  ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    overflow-x: auto;
+
+
+  }
+}
