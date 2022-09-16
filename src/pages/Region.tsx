@@ -1,3 +1,4 @@
+import { CityCard } from '../components/CityCard';
 import { Title } from '../components/Title';
 import styles from './Region.module.scss';
 
@@ -39,56 +40,38 @@ export function Region() {
         <section className={styles.cityList}>
           <h3>Espirito Santo</h3>
           <ul>
-            <li>
-              <img src="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
-              <div>
-                <h4>Vitória</h4>
-                <div className={styles.cityInfo}>
-                  <p>362 097 habitantes</p>
-                  <p>276.8km²</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
-              <div>
-                <h4>Vitória</h4>
-                <div className={styles.cityInfo}>
-                  <p>362 097 habitantes</p>
-                  <p>276.8km²</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
-              <div>
-                <h4>Vitória</h4>
-                <div className={styles.cityInfo}>
-                  <p>362 097 habitantes</p>
-                  <p>276.8km²</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
-              <div>
-                <h4>Vitória</h4>
-                <div className={styles.cityInfo}>
-                  <p>362 097 habitantes</p>
-                  <p>276.8km²</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <img src="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="" />
-              <div>
-                <h4>Vitória</h4>
-                <div className={styles.cityInfo}>
-                  <p>362 097 habitantes</p>
-                  <p>276.8km²</p>
-                </div>
-              </div>
-            </li>
+            <CityCard 
+            cityName='Vitória'
+            habitants={362097}
+            area={276.8}
+            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            />
+            <CityCard 
+            cityName='Vitória'
+            habitants={362097}
+            area={276.8}
+            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            />
+            <CityCard 
+            cityName='Vitória'
+            habitants={362097}
+            area={276.8}
+            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            />
+            <CityCard 
+            cityName='Vitória'
+            habitants={362097}
+            area={276.8}
+            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            />
+            <CityCard 
+            cityName='Vitória'
+            habitants={362097}
+            area={276.8}
+            img="https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            />
+            
+            
           </ul>
         </section>
 
