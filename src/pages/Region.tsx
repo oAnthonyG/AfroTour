@@ -1,3 +1,4 @@
+import { Title } from '../components/Title';
 import styles from './Region.module.scss';
 
 
@@ -33,6 +34,7 @@ export function Region() {
             Consectetur provident dignissimos soluta harum odio sapiente beatae sit assumenda
           </p>
         </article>
+        <Title>Escolha uma cidade</Title>
       </section>
     </main >
   )

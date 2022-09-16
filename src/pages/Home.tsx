@@ -3,6 +3,7 @@ import { RegionCard } from "../components/RegionCard";
 
 import HappyPersonPng from '../assets/happy-person.png';
 import WhatsAppSvg from '../assets/icon-wpp.svg';
+import { Title } from '../components/Title';
 
 export function Home() {
   return (
@@ -19,7 +20,7 @@ export function Home() {
         </div>
       </section>
       <section className={styles.regions}>
-        <h2>Para onde vamos?</h2>
+        <Title>Para onde vamos?</Title>
         <ul>
           <RegionCard
             title="Centro-oeste"
