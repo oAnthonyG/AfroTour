@@ -11,6 +11,7 @@ import { Title } from '../components/Title';
 
 interface Region{
   id: string;
+  slug: string;
   name: string;
   description: string;
   minPrice: number;
@@ -30,6 +31,7 @@ export function Home() {
         const resultsFormatted = results.map(item =>{
           return{
             id: item.id,
+            slug: item.uid + '',
             name: item.data.name,
             description: item.data.description,
             minPrice: item.data.min_price,
@@ -59,6 +61,7 @@ export function Home() {
         <ul>
           {regions.map(region =>(
           <RegionCard
+          slug={region.slug}
             title={region.name}
             description={region.description}
             minPrice={region.minPrice}
