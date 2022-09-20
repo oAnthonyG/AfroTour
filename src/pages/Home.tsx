@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import * as Prismic from '@prismicio/client';
 
 import { RegionCard } from "../components/RegionCard";
 
@@ -8,6 +7,8 @@ import WhatsAppSvg from '../assets/icon-wpp.svg';
 
 import styles from './Home.module.scss';
 import { Title } from '../components/Title';
+
+import { client } from '../services/prismic';
 
 interface Region{
   id: string;
@@ -18,8 +19,7 @@ interface Region{
   image: string;
 }
 
-const endpoit = Prismic.getRepositoryEndpoint('anthony-afro-tour')
-const client = Prismic.createClient(endpoit)
+
 
 export function Home() {
   const [regions, setRegions] = useState<Region[]>([])
