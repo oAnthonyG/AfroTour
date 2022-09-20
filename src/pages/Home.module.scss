@@ -35,16 +35,20 @@
         color: $gray-600;
       }
 
-      button {
+      a{
         display: flex;
         align-items: center;
+        width: fit-content;
         gap: 0.5rem;
+
         font-size: 0.875rem;
         font-weight: 700;
         text-transform: uppercase;
+        text-decoration: none;
         border: none;
         border-radius: 20rem;
         padding: 1rem;
+
         color: $white;
         background-color: $green-500;
 

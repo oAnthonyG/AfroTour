@@ -10,13 +10,13 @@ export function Footer() {
       <div>
         <p>Todos os direitos reservados © 2022 - AfroTour</p>
         <nav>
-          <a href="#">
+          <a href="https://www.instagram.com/anthony_guillherme/">
             <img src={InstagramSvg} alt="link para o instagram" />
           </a>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/antthonyg/">
             <img src={FacebookSvg} alt="link para o  facebook" />
           </a>
-          <a href="#">
+          <a href="https://github.com/oAnthonyG">
             <img src={YoutubeSvg} alt="link para o youtube" />
           </a>
         </nav>
