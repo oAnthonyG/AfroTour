@@ -7,6 +7,7 @@ import { CityList } from '../components/CityList';
 import { Title } from '../components/Title';
 import { client } from '../services/prismic';
 import styles from './Region.module.scss';
+import { Header } from '../components/Header';
 
 
 interface RegionInfo {
@@ -83,40 +84,42 @@ export function Region() {
 
 
   return (
-    <main>
-      <div className={styles.regionPresentation} style={{ backgroundImage: `url('${regionInfo?.image}')` }}>
-        <div className={styles.title}>
-          <h1>{regionInfo?.name}</h1>
+    <>
+    <Header type='secondary'/>
+      <main>
+        <div className={styles.regionPresentation} style={{ backgroundImage: `url('${regionInfo?.image}')` }}>
+          <div className={styles.title}>
+            <h1>{regionInfo?.name}</h1>
+          </div>
         </div>
-      </div>
-      <section className={styles.content}>
-        <article className={styles.regionInfo}>
-          <ul>
-            <li>
-              <span>{regionInfo?.statesNumber || 0}</span>
+        <section className={styles.content}>
+          <article className={styles.regionInfo}>
+            <ul>
+              <li>
+                <span>{regionInfo?.statesNumber || 0}</span>
 
-              <p>estados</p>
-            </li>
-            <li>
-              <span>{regionInfo?.habitantsNumber || 0}</span>
-              <p>habitantes</p>
-            </li>
-            <li>
-              <span>{regionInfo?.citiesNumber || 0}</span>
-              <p>municípios</p>
-            </li>
-          </ul>
+                <p>estados</p>
+              </li>
+              <li>
+                <span>{regionInfo?.habitantsNumber || 0}</span>
+                <p>habitantes</p>
+              </li>
+              <li>
+                <span>{regionInfo?.citiesNumber || 0}</span>
+                <p>municípios</p>
+              </li>
+            </ul>
 
-          <p>{regionInfo?.about}</p>
-        </article>
-        <Title>Escolha uma cidade</Title>
+            <p>{regionInfo?.about}</p>
+          </article>
+          <Title>Escolha uma cidade</Title>
 
 
-        {states.map(state => <CityList stateName={state.name} cities={state.cities} />)}
+          {states.map(state => <CityList stateName={state.name} cities={state.cities} />)}
 
-      </section>
-    </main >
-
+        </section>
+      </main >
+    </>
   )
 }
 

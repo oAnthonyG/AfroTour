@@ -2,7 +2,6 @@
 
 .header{
   font-size: 2rem;
-  
   background-color: $gray-300;
 
   div{
@@ -17,6 +16,11 @@
       font-weight: 700;
       color: $green-500;
     }
+  }
+
+  &.secondary{
+    background-color: $green-700;
+    color: white;
   }
   
 }
