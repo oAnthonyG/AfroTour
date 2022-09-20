@@ -1,50 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+import * as Prismic from '@prismicio/client';
+
 import { CityList } from '../components/CityList';
 import { Title } from '../components/Title';
 import { client } from '../services/prismic';
 import styles from './Region.module.scss';
 
-const cities = [
-  {
-    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    cityName: 'Vitória',
-    habitants: 362097,
-    area: 276.8,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    cityName: 'Vitória',
-    habitants: 362097,
-    area: 276.8,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    cityName: 'Vitória',
-    habitants: 362097,
-    area: 276.8,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    cityName: 'Vitória',
-    habitants: 362097,
-    area: 276.8,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    cityName: 'Vitória',
-    habitants: 362097,
-    area: 276.8,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1627663412342-d77cd974e9ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    cityName: 'Vitória',
-    habitants: 362097,
-    area: 276.8,
-  },
-
-]
 
 interface RegionInfo {
   id: string;
@@ -56,26 +19,64 @@ interface RegionInfo {
   citiesNumber: number;
 }
 
+interface CityResponse {
+  city_name: string;
+  habitants_number: number;
+  area: number;
+  city_image: {
+    url: string;
+  }
+}
+interface City {
+  cityname: string;
+  habitantsNumber: number;
+  area: number;
+  image: string;
+}
+
+interface State {
+  name: string;
+  cities: City[];
+}
+
 export function Region() {
-  const [regionInfo, setRegionInfo] = useState<RegionInfo>()
+  const [regionInfo, setRegionInfo] = useState<RegionInfo>();
+  const [states, setStates] = useState<State[]>([]);
   const { slug } = useParams() as { slug: string };
 
 
   useEffect(() => {
     async function fetchData() {
-      const result = await client.getByUID('regions', slug)
- 
-      const resultsFormatted = {
-        id: result.id,
-        name: result.data.name,
-        image: result.data.info[0].info_image.url,
-        about: result.data.info[0].about,
-        habitantsNumber: result.data.info[0].habitants_number,
-        statesNumber: result.data.info[0].state_number,
-        citiesNumber: result.data.info[0].cities_number,
-
+      const resultRegion = await client.getByUID('regions', slug);
+      const resultsStates = await client.getAllByType('states', {
+        predicates: [Prismic.predicate.at('my.states.region', slug)]
+      });
+      const RegionFormatted = {
+        id: resultRegion.id,
+        name: resultRegion.data.name,
+        image: resultRegion.data.info[0].info_image.url,
+        about: resultRegion.data.info[0].about,
+        habitantsNumber: resultRegion.data.info[0].habitants_number,
+        statesNumber: resultRegion.data.info[0].state_number,
+        citiesNumber: resultRegion.data.info[0].cities_number,
       }
-      setRegionInfo(resultsFormatted);
+      const statesFormatted = resultsStates.map(state => {
+        return {
+          name: state.data.name,
+          cities: state.data.cities.map((city: CityResponse) => {
+            return {
+              cityname: city.city_name,
+              image: city.city_image.url,
+              habitantsNumber: city.habitants_number,
+              area: city.area,
+            }
+          })
+
+        }
+      })
+
+      setRegionInfo(RegionFormatted);
+      setStates(statesFormatted);
     }
     fetchData()
   })
@@ -110,13 +111,12 @@ export function Region() {
         </article>
         <Title>Escolha uma cidade</Title>
 
-        <CityList stateName='Espirito Santo' cities={cities} />
-        <CityList stateName='Minas Gerais' cities={cities} />
-        <CityList stateName='Rio de Janeiro' cities={cities} />
-        <CityList stateName='São Paulo' cities={cities} />
+
+        {states.map(state => <CityList stateName={state.name} cities={state.cities} />)}
 
       </section>
     </main >
+
   )
 }
 

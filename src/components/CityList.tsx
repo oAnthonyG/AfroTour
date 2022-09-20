@@ -2,9 +2,9 @@ import styles from './CityList.module.scss';
 import { CityCard } from "./CityCard";
 
 interface City {
-  img: string;
-  cityName: string;
-  habitants: number;
+  image: string;
+  cityname: string;
+  habitantsNumber: number;
   area: number;
 }
 
@@ -20,10 +20,10 @@ export function CityList({ stateName, cities }: CityListProps) {
       <ul>
         {cities.map(city => (
           <CityCard
-          key={city.cityName}
-            img={city.img}
-            cityName={city.cityName}
-            habitants={city.habitants}
+          key={city.cityname}
+            img={city.image}
+            cityName={city.cityname}
+            habitants={city.habitantsNumber}
             area={city.area}
           />
         )
