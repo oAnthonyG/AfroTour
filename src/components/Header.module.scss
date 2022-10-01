@@ -1,10 +1,10 @@
 @import '../styles/colors';
 
-.header{
+.header {
   font-size: 2rem;
   background-color: $gray-300;
 
-  div{
+  div {
     display: flex;
     align-items: center;
     width: 73rem;
@@ -12,15 +12,23 @@
     padding: 0 1rem;
     margin: 0 auto;
 
-    span{
+    span {
       font-weight: 700;
       color: $green-500;
     }
+
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+      justify-content: center;
+    }
   }
 
-  &.secondary{
+  &.secondary {
     background-color: $green-700;
     color: white;
   }
-  
+
 }

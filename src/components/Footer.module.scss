@@ -26,10 +26,30 @@
         border-radius: 1.25rem;
         transition: 0.2s;
 
-        &:hover{
+        &:hover {
           background-color: $green-600;
         }
       }
+
+      @media screen and (max-width: 600px) {
+        margin-bottom: 1rem;
+      }
     }
+
+    @media screen and (max-width: 600px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: auto;
+
+    >div {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 1rem;
   }
 }

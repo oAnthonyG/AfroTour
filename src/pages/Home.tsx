@@ -21,7 +21,6 @@ interface Region {
 }
 
 
-
 export function Home() {
   const [regions, setRegions] = useState<Region[]>([])
 
@@ -46,7 +45,7 @@ export function Home() {
 
   return (
     <>
-    <Header />
+      <Header />
       <main className={styles.container}>
         <section className={styles.welcome}>
           <div className={styles.welcomeContent}>

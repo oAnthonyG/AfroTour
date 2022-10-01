@@ -85,7 +85,7 @@ export function Region() {
 
   return (
     <>
-    <Header type='secondary'/>
+      <Header type='secondary' />
       <main>
         <div className={styles.regionPresentation} style={{ backgroundImage: `url('${regionInfo?.image}')` }}>
           <div className={styles.title}>

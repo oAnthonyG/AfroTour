@@ -6,15 +6,15 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   overflow: hidden;
-  
+
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     outline: 3px solid $green-600;
   }
 
   img {
-    width: 35rem;
+    width: 100%;
     max-height: 10rem;
     object-fit: cover;
   }
@@ -43,6 +43,12 @@
         color: $green-600;
       }
     }
-
   }
+
+  @media screen and (max-width: 1100px) {
+    width: 40%;
+    min-width: 320px;
+  }
+
+
 }
